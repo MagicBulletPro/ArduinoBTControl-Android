@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Magic BT</string>
+    <string name="name">Name</string>
+    <string name="add_accessory">Add Accessory</string>
+    <string name="add">Add</string>
+    <string name="ok">OK</string>
+    <string name="no_accessory_has_been_added">No accessory has been added!</string>
+    <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>
+    <string name="exit">Exit</string>
+    <string name="invalid_gpio">Invalid GPIO</string>
+    <string name="delete">Delete</string>
+    <string name="are_you_sure_you_want_to_delete_this_accessory">Are you sure you want to delete this accessory?</string>
+</resources>

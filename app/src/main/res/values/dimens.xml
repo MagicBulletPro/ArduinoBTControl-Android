@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!--Spacing-->
+    <dimen name="spacing_tiny">2dp</dimen>
+    <dimen name="spacing_small">5dp</dimen>
+    <dimen name="spacing_medium">10dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+    <dimen name="spacing_xl">30dp</dimen>
+    <dimen name="spacing_xxl">40dp</dimen>
+
+    <!--Size-->
+    <dimen name="tiny">5dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="medium">20dp</dimen>
+    <dimen name="large">30dp</dimen>
+    <dimen name="xl">40dp</dimen>
+    <dimen name="xxl">50dp</dimen>
+    <dimen name="xxxl">60dp</dimen>
+
+    <dimen name="button_size_tiny">40dp</dimen>
+    <dimen name="button_size_small">45dp</dimen>
+    <dimen name="button_size_medium">50dp</dimen>
+    <dimen name="keypad_button">60dp</dimen>
+    <dimen name="keypad_button_height">60dp</dimen>
+    <dimen name="keypad_button_width">80dp</dimen>
+
+
+    <!--Box-->
+    <dimen name="box_size_tiny">70dp</dimen>
+    <dimen name="box_size_small">80dp</dimen>
+    <dimen name="box_size_medium">90dp</dimen>
+    <dimen name="box_size_large">100dp</dimen>
+    <dimen name="box_size_xl">130dp</dimen>
+    <dimen name="box_size_xxl">150dp</dimen>
+
+    <dimen name="man_size_tiny">100dp</dimen>
+    <dimen name="man_size_small">130dp</dimen>
+    <dimen name="man_size_medium">140dp</dimen>
+    <dimen name="man_size_large">150dp</dimen>
+    <dimen name="man_size_xl">200dp</dimen>
+    <dimen name="man_size_xxl">250dp</dimen>
+    <dimen name="man_size_xxxl">300dp</dimen>
+
+    <!--Card view corner radius-->
+    <dimen name="dialog_corner_radius">20dp</dimen>
+    <dimen name="text_box_corner_radius">5dp</dimen>
+    <dimen name="card_corner_radius_tiny">5dp</dimen>
+    <dimen name="card_corner_radius_small">10dp</dimen>
+    <dimen name="card_corner_radius_medium">20dp</dimen>
+    <dimen name="card_corner_radius_large">30dp</dimen>
+    <dimen name="card_corner_radius_xl">40dp</dimen>
+    <dimen name="card_corner_radius_xxl">50dp</dimen>
+
+    <!--Card view elevation-->
+    <dimen name="card_view_elevation_tiny">1dp</dimen>
+    <dimen name="card_view_elevation_small">2dp</dimen>
+    <dimen name="card_view_elevation_medium">4dp</dimen>
+    <dimen name="card_view_elevation_large">5dp</dimen>
+    <dimen name="card_view_elevation_xl">7dp</dimen>
+    <dimen name="card_view_elevation_xxl">10dp</dimen>
+
+
+    <!--Text sizes-->
+    <dimen name="text_size_xxl">60sp</dimen>
+    <dimen name="text_size_xl">50sp</dimen>
+    <dimen name="text_size_large">30sp</dimen>
+    <dimen name="text_size_medium">23sp</dimen>
+    <dimen name="text_size_small">18sp</dimen>
+    <dimen name="text_size_tiny">13sp</dimen>
+    <dimen name="text_size_title">26sp</dimen>
+
+    <!--Boarder sizes-->
+    <dimen name="border_width_xxl">10dp</dimen>
+    <dimen name="border_width_xl">8dp</dimen>
+    <dimen name="border_width_large">5dp</dimen>
+    <dimen name="border_width_medium">3dp</dimen>
+    <dimen name="border_width_small">2dp</dimen>
+    <dimen name="border_width_tiny">1dp</dimen>
+
+    <!--Rectangle corner radius-->
+    <dimen name="border_corner_radius_xl">70dp</dimen>
+    <dimen name="border_corner_radius_large">20dp</dimen>
+    <dimen name="border_corner_radius_small">10dp</dimen>
+    <dimen name="border_corner_radius_tiny">5dp</dimen>
+</resources>

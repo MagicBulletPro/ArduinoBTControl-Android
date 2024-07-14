@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Spacing-->
+    <dimen name="spacing_small">5dp</dimen>
+    <dimen name="spacing_medium">10dp</dimen>
+    <dimen name="spacing_large">20dp</dimen>
+    <dimen name="spacing_xl">30dp</dimen>
+    <dimen name="spacing_xxl">40dp</dimen>
+
+    <!--Size-->
+    <dimen name="tiny">5dp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="medium">20dp</dimen>
+    <dimen name="large">30dp</dimen>
+    <dimen name="xl">40dp</dimen>
+    <dimen name="xxl">50dp</dimen>
+
+    <!--Card view corner radius-->
+    <dimen name="dialog_corner_radius">20dp</dimen>
+    <dimen name="dialog_corner_radius_small">5dp</dimen>
+    <dimen name="text_box_corner_radius">5dp</dimen>
+
+
+    <!--Text sizes-->
+    <dimen name="text_size_xxl">60sp</dimen>
+    <dimen name="text_size_xl">50sp</dimen>
+    <dimen name="text_size_large">35sp</dimen>
+    <dimen name="text_size_medium">25sp</dimen>
+    <dimen name="text_size_small">20sp</dimen>
+    <dimen name="text_size_tiny">15sp</dimen>
+
+    <!--Boarder sizes-->
+    <dimen name="border_width_large">3dp</dimen>
+    <dimen name="border_width_small">2dp</dimen>
+    <dimen name="border_width_tiny">1dp</dimen>
+
+    <!--Rectangle corner radius-->
+    <dimen name="border_corner_radius_xl">70dp</dimen>
+    <dimen name="border_corner_radius_large">20dp</dimen>
+    <dimen name="border_corner_radius_small">10dp</dimen>
+    <dimen name="border_corner_radius_tiny">5dp</dimen>
+
+</resources>

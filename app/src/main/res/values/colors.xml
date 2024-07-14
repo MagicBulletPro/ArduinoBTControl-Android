@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="button_normal_color">#333</color>
+    <color name="button_active_color">#008c6a</color>
+    <color name="text_dark_color">#333</color>
+    <color name="textIconColor">#610000</color>
+    <color name="text_dark_light_color">#005641</color>
+    <color name="color_crystal_teal">#00637C</color>
+
+    <color name="title_color">#C89C19</color>
+    <color name="dark_color">#005641</color>
+    <color name="menu_color">#FF9800</color>
+    <color name="bluetooth">#0449FA</color>
+    <color name="add_accessory">#48cf6c</color>
+    <color name="car_view_color">#f2ede9</color>">
+
+    <color name="colorAccent_1">#6f64d6</color>
+    <color name="colorAccent_2">#7668F8</color>
+    <color name="colorAccent_3">#6F63FF</color>
+</resources>

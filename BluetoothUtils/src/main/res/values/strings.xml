@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chooseDevice">Choose Device</string>
+    <string name="no_device_available">No Device available</string>
+    <string name="cancel">Cancel</string>
+</resources>

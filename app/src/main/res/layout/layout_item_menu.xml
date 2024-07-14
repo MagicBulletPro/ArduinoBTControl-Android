@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_large"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/card_view_elevation_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/search_bluetooth"
+                android:layout_width="@dimen/xxxl"
+                android:layout_height="@dimen/xxxl"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/spacing_medium"
+                android:src="@drawable/bluetooth_searching"
+                app:tint="@color/bluetooth" />
+
+            <ImageView
+                android:id="@+id/add_accessory"
+                android:layout_width="@dimen/xxxl"
+                android:layout_height="@dimen/xxxl"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/spacing_medium"
+                app:tint="@color/add_accessory"
+                android:src="@drawable/ic_add_box" />
+
+            <ImageView
+                android:id="@+id/exit"
+                android:layout_width="@dimen/xxxl"
+                android:layout_height="@dimen/xxxl"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="@dimen/spacing_medium"
+                app:tint="@color/colorRed"
+                android:src="@drawable/exit_to_app" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
