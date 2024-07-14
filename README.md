@@ -41,7 +41,7 @@ This is an Android application for controlling accessories via Bluetooth using a
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/MagicBulletPro/ArduinoBTControl-Android.git
+    git clone https://github.com/MagicBulletPro/bluetooth-control-android.git
     ```
 
 2. Open the project in Android Studio.
