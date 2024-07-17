@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.magicbullet.bluetoothapp">
 
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"
+        tools:ignore="SystemPermissionTypo" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        tools:ignore="SystemPermissionTypo" />
+
     <application
         android:name=".BluetoothApp"
         android:allowBackup="true"

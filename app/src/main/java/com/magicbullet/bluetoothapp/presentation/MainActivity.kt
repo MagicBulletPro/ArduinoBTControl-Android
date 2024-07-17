@@ -1,8 +1,11 @@
 package com.magicbullet.bluetoothapp.presentation
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,6 +13,7 @@ import android.widget.PopupWindow
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -38,6 +42,60 @@ class MainActivity : AppCompatActivity() {
     private lateinit var accListAdapter: AccListAdapter
     private var accList = ArrayList<Accessory>()
     private lateinit var progress: CircularProgress
+    private var hasReadPermission = false
+
+    private val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        arrayOf(
+            Manifest.permission.BLUETOOTH_ADMIN,
+            Manifest.permission.BLUETOOTH,
+            Manifest.permission.BLUETOOTH_CONNECT,
+            Manifest.permission.BLUETOOTH_SCAN,
+        )
+    } else {
+        arrayOf(
+            Manifest.permission.BLUETOOTH_ADMIN,
+            Manifest.permission.BLUETOOTH,
+        )
+    }
+
+    private fun hasPermissions(vararg permissions: String): Boolean = permissions.all {
+        ActivityCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private fun checkPermission() {
+        if (hasPermissions(*permissions)) {
+            hasReadPermission = true
+        } else {
+            ActivityCompat.requestPermissions(
+                this,
+                permissions,
+                PERMISSION_CHECK_REQ_CODE
+            )
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            PERMISSION_CHECK_REQ_CODE -> {
+                hasReadPermission = grantResults.isNotEmpty() && hasPermissions(*permissions)
+                if (!hasReadPermission)
+                    showDialog(
+                        "Bluetooth",
+                        "Please grant Bluetooth permission. Go to app settings and grant the permission.",
+                        "OK",
+                        "Cancel"
+                    ) {
+                        checkPermission()
+                    }
+            }
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +108,7 @@ class MainActivity : AppCompatActivity() {
         btUtil.setActivity(this)
         // Setup activity components
         setupActivity()
+        checkPermission()
     }
 
     // Function to setup the main activity components
@@ -218,5 +277,9 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         btUtil.disconnectBTDevice()
+    }
+
+    companion object {
+        const val PERMISSION_CHECK_REQ_CODE = 123
     }
 }
