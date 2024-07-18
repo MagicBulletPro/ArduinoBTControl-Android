@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var accListAdapter: AccListAdapter
     private var accList = ArrayList<Accessory>()
     private lateinit var progress: CircularProgress
-    private var hasReadPermission = false
+    private var bluetoothPermission = false
 
     private val permissions = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         arrayOf(
@@ -58,13 +58,13 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    private fun hasPermissions(vararg permissions: String): Boolean = permissions.all {
+    private fun btCheckSelfPermission(vararg permissions: String): Boolean = permissions.all {
         ActivityCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
     }
 
     private fun checkPermission() {
-        if (hasPermissions(*permissions)) {
-            hasReadPermission = true
+        if (btCheckSelfPermission(*permissions)) {
+            bluetoothPermission = true
         } else {
             ActivityCompat.requestPermissions(
                 this,
@@ -82,8 +82,8 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             PERMISSION_CHECK_REQ_CODE -> {
-                hasReadPermission = grantResults.isNotEmpty() && hasPermissions(*permissions)
-                if (!hasReadPermission)
+                bluetoothPermission = grantResults.isNotEmpty() && btCheckSelfPermission(*permissions)
+                if (!bluetoothPermission)
                     showDialog(
                         "Bluetooth",
                         "Please grant Bluetooth permission. Go to app settings and grant the permission.",
