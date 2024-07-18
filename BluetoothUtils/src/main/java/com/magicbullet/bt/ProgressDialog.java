@@ -10,12 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatDialog;
 
 public class ProgressDialog extends AppCompatDialog {
-    //private Context context;
     private TextView textViewTitle, textViewMessage;
 
     public ProgressDialog(Context context) {
         super(context);
-        //this.context = context;
     }
 
     @Override
@@ -24,7 +22,6 @@ public class ProgressDialog extends AppCompatDialog {
         setContentView(R.layout.progress_dialog);
         textViewTitle = findViewById(R.id.textViewTitle);
         textViewMessage = findViewById(R.id.textViewMessage);
-        //setTitle("Please wait...");
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         setCancelable(false);

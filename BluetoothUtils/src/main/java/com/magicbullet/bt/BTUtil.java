@@ -7,7 +7,6 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
-import android.os.ParcelUuid;
 import android.util.Log;
 
 import java.io.IOException;
@@ -38,13 +37,6 @@ public class BTUtil {
 
     private final BTListener btListener;
 
-    /*public static synchronized BTUtil getInstance(Activity activity, PrintStatusListener printStatusListener) {
-        if (btUtilInstance == null) {
-            btUtilInstance = new BTUtil(activity, printStatusListener);
-        }
-        return btUtilInstance;
-    }*/
-
     public BTUtil(Context context, BTListener btListener) {
         this.context = context;
         this.btListener = btListener;
@@ -71,13 +63,6 @@ public class BTUtil {
             Set<BluetoothDevice> availParedDevices = bluetoothAdapter.getBondedDevices();
             if (!availParedDevices.isEmpty()) {
                 for (BluetoothDevice device : availParedDevices) {
-                    ParcelUuid[] uuids = device.getUuids();
-                    /*for (ParcelUuid uuid : uuids) {
-                        if (uuid.getUuid().toString().equals(PRINTER_UUID)) {
-                            paredDevices.add(device);
-                            break;
-                        }
-                    }*/
                     paredDevices.add(device);
                     if (defaultDeviceMac.equals(device.getAddress())) {
                         bluetoothDevice = device;
@@ -111,20 +96,11 @@ public class BTUtil {
         new Thread(() -> {
             try {
                 if (bluetoothDevice != null) {
-                    //Old code
                     UUID uuid = UUID.fromString(DEVICE_UUID);
                     bluetoothSocket = bluetoothDevice.createRfcommSocketToServiceRecord(uuid);
                     bluetoothSocket.connect();
                     outputStream = bluetoothSocket.getOutputStream();
                     inputStream = bluetoothSocket.getInputStream();
-                    /*
-                     * New code
-                     * */
-                    /*connection = new BluetoothConnectionInsecure(bluetoothDevice.getAddress());
-                    if (Looper.myLooper() == null) {
-                        Looper.prepare();
-                    }
-                    connection.open();*/
                     isConnected = true;
                     beginListenForData();
                 } else {
@@ -150,10 +126,7 @@ public class BTUtil {
         if (bluetoothDevice != null && isConnected) {
             Thread commandThread = new Thread(() -> {
                 try {
-                    //Old codes
-                    //outputStream.write(String.valueOf(command).getBytes());
                     outputStream.write(command.getBytes());
-                    //connection.write(text.getBytes());
                     btListener.commandStatus(true, "Command sent successfully!");
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -207,13 +180,9 @@ public class BTUtil {
         if (bluetoothDevice != null && isConnected) {
             new Thread(() -> {
                 try {
-                    //Old code
                     outputStream.close();
                     inputStream.close();
                     bluetoothSocket.close();
-                    //New code
-                    /*connection.close();
-                    Looper.myLooper().quit();*/
                     isConnected = false;
                     Log.d("Device connection", "Device disconnected successfully");
                 } catch (Exception e) {
